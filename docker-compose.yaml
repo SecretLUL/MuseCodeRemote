@@ -1,0 +1,18 @@
+services:
+  muse-code-remote:
+    build: .
+    container_name: muse-code-remote
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    environment:
+      - PORT=8765
+      - PUBLIC_URL=${PUBLIC_URL:-}
+    networks:
+      - default
+      - gateway_default
+
+networks:
+  default:
+  gateway_default:
+    external: true

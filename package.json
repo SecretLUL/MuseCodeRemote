@@ -1,0 +1,24 @@
+{
+  "name": "muse-code-remote",
+  "version": "1.0.0",
+  "description": "Open Source Web UI and Remote Relay for Meta Muse Code",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "keywords": [
+    "muse",
+    "muse-code",
+    "meta-ai",
+    "terminal",
+    "tui",
+    "webui",
+    "remote"
+  ],
+  "author": "SecretLUL",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}
