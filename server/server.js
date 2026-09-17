@@ -71,14 +71,18 @@ server.on('upgrade', (req, socket, head) => {
   const proto = req.headers['x-forwarded-proto'] || 'http';
   const url = new URL(req.url, `${proto}://${req.headers.host || 'localhost'}`);
   const pathname = url.pathname;
+  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
   if (pathname === '/ws/daemon') {
+    console.log(`[WS Upgrade] /ws/daemon from ${clientIp}`);
     daemonWss.handleUpgrade(req, socket, head, (ws) => {
       daemonWss.emit('connection', ws, req);
     });
   } else if (pathname === '/ws/client') {
     const token = url.searchParams.get('token');
+    console.log(`[WS Upgrade] /ws/client with token "${token}" from ${clientIp}`);
     if (!token || !sessions.has(token)) {
+      console.warn(`[WS Denied] Token "${token}" not found. Active: ${Array.from(sessions.keys()).join(', ')}`);
       socket.write('HTTP/1.1 401 Unauthorized\r\nContent-Type: text/plain\r\nConnection: close\r\n\r\nSession not found or daemon offline\n');
       socket.destroy();
       return;

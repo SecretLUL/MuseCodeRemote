@@ -295,3 +295,14 @@ html, body {
 .link-repo:hover {
   text-decoration: underline;
 }
+
+.connect-feedback {
+  font-size: 0.85rem;
+  margin-top: -12px;
+  margin-bottom: 14px;
+  min-height: 18px;
+}
+.connect-feedback.error { color: var(--danger); }
+.connect-feedback.loading { color: var(--warning); }
+.connect-feedback.success { color: var(--success); }
+

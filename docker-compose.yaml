@@ -8,6 +8,10 @@ services:
     environment:
       - PORT=8765
       - PUBLIC_URL=${PUBLIC_URL:-}
+    volumes:
+      - ./public:/app/public
+      - ./server:/app/server
+      - ./client:/app/client
     networks:
       - default
       - gateway_default
