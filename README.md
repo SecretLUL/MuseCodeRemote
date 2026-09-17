@@ -1,6 +1,6 @@
 # ⚡ Muse Code Remote (MCR)
 
-> Open-source Web UI & Outbound Terminal Relay for [Meta Muse Code](https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2).
+> Open-source Web UI & Outbound Terminal Relay for [Meta Muse Code](https://developer.meta.com/ai/products/muse-code/).
 
 Access your terminal-based **Muse Code** coding agent securely from any web browser (desktop, tablet, or smartphone) without exposing your machine, forwarding ports, or sharing credentials.
 
