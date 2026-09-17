@@ -193,7 +193,7 @@ def set_terminal_size(fd, cols, rows):
 
 def main():
     parser = argparse.ArgumentParser(description="Muse Code Remote (MCR) Daemon")
-    parser.add_argument("--relay", default=os.environ.get("MCR_RELAY", "http://localhost:8765"),
+    parser.add_argument("--relay", default=os.environ.get("MCR_RELAY", "https://muse.ammarnashar.dev"),
                         help="Relay server URL (e.g., https://muse.example.com)")
     parser.add_argument("--token", default=os.environ.get("MCR_TOKEN", ""),
                         help="Custom session token (optional)")
