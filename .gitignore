@@ -4,3 +4,6 @@ npm-debug.log
 .env
 .idea/
 .vscode/
+
+__pycache__/
+*.pyc
